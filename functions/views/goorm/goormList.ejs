@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('../templates/head.ejs') %>
+</head>
+<body>
+    <%- include ('../templates/header.ejs') %>
+    <div class="container">
+        <a href="goormForm">New</a>
+                     
+        <table border="1" style="width:600px">
+            <caption>goorm sample for firebase (Realtime Database)</caption>
+            <colgroup>
+                <col width='8%' />
+                <col width='*%' />
+                <col width='*%' />
+                <col width='15%' />
+                <col width='15%' />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Brand</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0; i<rows.length; i++) { %>
+                <tr>
+                    <td><%=rows.length-i%></td>
+                    <td><a href='goormDetail?grmNo=<%=rows[i].grmNo%>'><%=rows[i].brdName%></a></td>
+                    <td><%=rows[i].grmName%></td>
+                    <td><%=rows[i].grmScore%></td>
+                    <td><%=rows[i].grmRegDate%></td>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>   
+    </div>
+    <%- include ('../templates/footer.ejs') %>
+</body>
+</html>
+
+<%- include ('../templates/css.ejs') %>

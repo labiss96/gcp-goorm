@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('../templates/head.ejs') %>
+</head>
+<body>
+    <%- include ('../templates/header.ejs') %>
+    <table border="1" style="width:600px">
+        <caption>Goorm Diary for firebase</caption>
+        <colgroup>
+            <col width='15%' />
+            <col width='*%' />
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>Brand</td>
+                <td><%=row.brdName%></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><%=row.grmName%></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><%=row.grmPrice%></td>
+            </tr>
+            <tr>
+                <td>Nicotine</td>
+                <td><%=row.grmNicotine%></td>
+            </tr>
+            <tr>
+                <td>TAR</td>
+                <td><%=row.grmTar%></td>
+            </tr>
+            <tr>
+                <td>Feel of Hit</td>
+                <td><%=row.grmHit%></td>
+            </tr>
+            <tr>
+                <td>Is Menthol</td>
+                <td><%=row.grmIsMenthol%></td>
+            </tr>
+            <tr>
+                <td>Score</td>
+                <td><%=row.grmScore%></td>
+            </tr>
+        </tbody>
+    </table>   
+    <a href="#" onclick="history.back(-1)">Back </a>
+    <a href="goormDelete?grmno=<%=row.grmno%>">Delete </a>
+    <a href="goormForm?grmno=<%=row.grmno%>">Modify</a>
+    <%- include ('../templates/footer.ejs') %>
+</body>
+</html>
+<%- include ('../templates/css.ejs') %>

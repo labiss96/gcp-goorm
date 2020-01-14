@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('../templates/head.ejs') %>
+</head>
+<body>
+    <%- include ('../templates/header.ejs') %>
+    <br>
+    <div class="container">
+        <form name="form1" action="goormSave" method="post">
+            <table border="1" style="width:600px">
+                <caption>Goorm Diary for firebase</caption>
+                <colgroup>
+                    <col width='15%' />
+                    <col width='*%' />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td>Brand</td>
+                        <td>
+                            <select name="grmBrand">
+                                <% if (row == "") { %>
+                                    <option value="">브랜드선택</option>
+                                <% } else { %>
+                                    <option value="<%=row.grmBrand%>"><%=row.grmBrand%></option>
+                                <% } %>
+                                
+                                <% for(let brand of brands) { %>
+                                    <option value="<%= brand.brdName %>"><%= brand.brdName %></option>
+                                <% } %>
+                            </select>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" name="grmName" size="70" maxlength="250" value="<%=row.grmName%>"></td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td><input type="number" name="grmPrice" size="70" maxlength="250" value="<%=row.grmPrice%>"></td>
+                    </tr>
+                    <tr>
+                        <td>Nicotine</td>
+                        <td><input type="number" name="grmNicotine" size="70" maxlength="250" value="<%=row.grmNicotine%>"></td>
+                    </tr>
+                    <tr>
+                        <td>TAR</td>
+                        <td><input type="number" name="grmTar" size="70" maxlength="250" value="<%=row.grmTar%>"></td>
+                    </tr>
+                    <tr>
+                        <td>Feel of Hit</td>
+                        <td><input type="text" name="grmHit" size="70" maxlength="250" value="<%=row.grmHit%>"></td>
+                    </tr>
+                    <tr>
+                        <td>Is Menthol</td>
+                        <td><input type="text" name="grmIsMenthol" size="70" maxlength="250" value="<%=row.grmIsMenthol%>"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#" onclick="form1.submit()">저장</a>
+            <input type="hidden" name="grmNo" value="<%=row.grmNo%>">
+            <input type="hidden" name="grmRegDate" value="<%=row.grmRegDate%>">
+            <input type="hidden" name="grmScore" value="<%=row.grmScore%>">
+        </form>
+    </div>  
+    <%- include ('../templates/footer.ejs') %>
+</body>
+</html>
+
+<%- include ('../templates/css.ejs') %>

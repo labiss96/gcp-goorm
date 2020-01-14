@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('../templates/head.ejs') %>
+</head>
+<body>
+    <%- include ('../templates/header.ejs') %>
+    <br>
+    <div class="container">
+        <h3>Add Brand</h3>
+        <form name="form1" action="brandSave" method="post">
+            <table border="1" style="width:600px">
+                <caption>Goorm Diary for firebase</caption>
+                <colgroup>
+                    <col width='15%' />
+                    <col width='*%' />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td>Brand Name</td>
+                        <td><input type="text" name="brdName" size="70" maxlength="250" value="<%=row.brdName%>"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#" onclick="form1.submit()">저장</a>
+            <input type="hidden" name="brdNo" value="<%=row.brdNo%>">
+            <input type="hidden" name="brdRegDate" value="<%=row.brdRegDate%>">
+        </form>
+    </div>  
+    <%- include ('../templates/footer.ejs') %>
+</body>
+</html>
+
+<%- include ('../templates/css.ejs') %>
